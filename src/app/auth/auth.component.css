@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep .mat-tab-label{
+  color: black;
+  font-size: medium;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active{
+  background-color: rgb(255, 147, 51);
+}
+
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color,#000000) !important;
+}

@@ -1,0 +1,14 @@
+<a class="card" (click)="cardClicked()" [@cardFlip]="data.state">
+    <div class="face back">
+        <img class="img-fluid" src="https://assets.dominos.com.mx/dev/webOptimized/especialidad/HNC/HNC.png" alt="">
+        <h3 class="color">HAWAIANA</h3>
+        <div class="row botones">
+            <div class="col"><button mat-flat-button class="btn-secondary">DETALLES</button></div>
+            <div class="col"><button mat-flat-button class="btn-success">ORDENAR</button></div>
+        </div>
+    </div>
+    <div class="face front">
+        <p class="descripcion">La pizza más incluyente de nuestras especialidades. Pepperoni, carne molida, jamón, chorizo, pimiento, cebolla, champiñones, aceitunas, extra queso.</p>
+        <p><span class="ingredientes">Ingredientes:</span> Pepperoni, Carne Molida, Jamón, Chorizo, Pimiento, Cebolla, Champiñones Frescos, Aceitunas y Extra Queso.</p>
+    </div>
+</a>

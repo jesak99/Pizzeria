@@ -1,0 +1,17 @@
+img{
+    cursor: pointer;
+}
+
+.fondo{
+    background-color: rgb(255, 147, 51);
+}
+
+.ocultar{
+    display: flex;
+}
+
+@media screen and (max-width: 546px) {
+    .ocultar{
+        display: none;
+    }
+}

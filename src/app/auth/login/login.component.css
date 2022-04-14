@@ -1,0 +1,92 @@
+.container{
+    margin-top: 10px;
+}
+
+.amarillo{
+    color: rgb(255, 147, 51);
+}
+
+.negro{
+    color: rgb(0,0,0);
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline-dark{
+    color: white;
+    font-size: large;
+    border-color: white;
+    border-radius: 50px;
+    background-image: 
+    radial-gradient(ellipse at top right, rgba(255,147,52,1) 31%, rgba(0,163,203,0) 30%),
+    linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,147,52,1) 33%, rgba(255,147,52,1) 33%, rgba(255,147,52,1) 66%);
+  	background-size: 100% 100%;
+    transition: all 0.5s;
+}
+
+.btn-outline-dark:hover{
+    color: white;
+    font-size: larger;
+    padding: 8px 180px;
+}
+
+.click{
+    cursor: pointer;
+}
+
+input.ng-invalid.ng-touched{
+    box-shadow: 0 0.2rem 1rem 0 rgba(213,93,100,1);
+    border: 1px solid rgba(213,93,100,1);
+}
+
+.mat-form-field{
+    width: 100%;
+    color: black;
+}
+  
+.example-right-align {
+    text-align: right;
+}
+  
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+  
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+/**
+::ng-deep .mat-form-field-label{
+    color: black !important;
+}**/
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 147, 51) !important;
+}
+  
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 147, 51) !important;
+} 
+  
+::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 147, 51) !important;;
+}
