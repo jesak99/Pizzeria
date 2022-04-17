@@ -1,0 +1,25 @@
+h2{
+    text-align: center;
+}
+
+.amarillo{
+    color: rgb(255, 147, 51);
+}
+
+.ocultar{
+    display: flex;
+}
+
+.mostrar{
+    display: none;
+}
+
+@media screen and (max-width: 501px) {
+    .ocultar{
+        display: none;
+    }
+
+    .mostrar{
+        display: flex;
+    }
+}

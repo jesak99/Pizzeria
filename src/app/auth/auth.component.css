@@ -3,15 +3,31 @@
   justify-content: center;
 }
 
-::ng-deep .mat-tab-label{
+:host ::ng-deep .mat-tab-group{
+  border-style: solid;
+  border-color: rgb(255, 147, 51) !important;
+  border-radius: .7em;
+  border-width: 1px;
+}
+
+:host ::ng-deep .mat-tab-group .mat-tab-labels{
+  background-color: rgb(255, 147, 51) !important;
+  border-top-left-radius: .7em;
+  border-top-right-radius: .7em;
+}
+
+:host ::ng-deep .mat-tab-label .mat-tab-label-active{
   color: black;
   font-size: medium;
 }
 
-::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active{
-  background-color: rgb(255, 147, 51);
+:host ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active{
+  background-color: rgb(255, 255, 255);
+  border-top-left-radius: .7em;
+  border-top-right-radius: .7em;
+  opacity: 100%;
 }
 
-::ng-deep .mat-ink-bar {
-  background-color: var(--primary-color,#000000) !important;
+:host ::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color,rgb(255, 147, 51)) !important;
 }

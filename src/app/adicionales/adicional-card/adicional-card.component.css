@@ -1,0 +1,114 @@
+a{
+	cursor: pointer;
+}
+
+.btn-success{
+    background-color: rgb(255, 147, 51);
+}
+
+.card {
+	display: block;
+	top: 0px;
+	position: relative;
+	max-width: 262px;
+	background-color: rgba(255, 147, 51, 0.3);
+	border-radius: 4px;
+	margin: 12px;
+	text-decoration: none;
+	z-index: 0;
+	overflow: hidden;
+	border: 1px solid #f2f8f9;
+	border-radius: .7em;
+}
+
+.card:hover {
+	transition: all 0.2s ease-out;
+	box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+	top: -4px;
+	border: 1px solid #cccccc;
+	background-color: white;
+}
+
+h3 {
+	color: #000000;
+	font-size: 17px;
+	line-height: 24px;
+	font-weight: 700;
+	text-align: center;
+    padding-top: 5px;
+}
+
+::ng-deep .mat-tooltip {
+    text-align: justify !important;
+}
+
+.especifico{
+    color: black;
+    font-size: medium;
+    margin-left: 5px;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input:disabled{
+    background: transparent !important;
+    color: black;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 2px;
+    background-color: rgb(255, 147, 51);
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    max-width: 5rem;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 1rem;
+    height: 2rem;
+    text-align: center;
+}

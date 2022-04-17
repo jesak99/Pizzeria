@@ -1,0 +1,64 @@
+h2{
+    text-align: center;
+}
+
+.amarillo{
+    color: rgb(255, 147, 51);
+}
+
+.input-group{
+    justify-content: flex-end;
+}
+
+button{
+    height: 60px;
+    padding: 0%;
+}
+
+.example-form-field{
+    max-width: 150px;
+}
+
+.mat-form-field{
+    width: 100%;
+    color: black;
+}
+
+/**
+::ng-deep .mat-form-field-label{
+    color: black !important;
+}**/
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 147, 51) !important;
+}
+  
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 147, 51) !important;
+} 
+  
+::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 147, 51) !important;;
+}
+
+:host::ng-deep.mat-form-field-flex {
+    background-color: rgba(255, 147, 51,0.2) !important;;
+}
+
+.cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+@media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 990px) {
+    .cards { grid-template-columns: repeat(4, 1fr); }
+}

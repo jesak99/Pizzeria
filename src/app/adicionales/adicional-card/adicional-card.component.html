@@ -1,0 +1,16 @@
+<a class="card">
+    <h3 matTooltip="hola xd">PEPSI</h3>
+    <img class="img-fluid" src="https://assets.dominos.com.mx/dev/webOptimized/adicional/FPEPSI.png" alt="">
+    <div class="row">
+        <div class="col">
+            <span class="especifico">600 ml</span>
+        </div>
+        <div class="col">
+            <div class="number-input">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                <input type="number" class="quantity" min="0" max="20" name="quantity" value="0" id="quantity" name="quantity" disabled>
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+            </div>
+        </div>
+    </div>
+</a>

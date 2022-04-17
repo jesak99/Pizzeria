@@ -1,0 +1,156 @@
+.container{
+    box-shadow: 2px 4px 8px rgba(38, 38, 38, 0.2);
+}
+
+table{
+    width: 100%;
+}
+
+.mat-header-cell {
+    color: rgb(116, 115, 115);
+    font-weight: bold;
+    font-size: medium;
+}
+
+.imagen{
+    max-width: 200px;
+}
+
+img{
+    border-radius: .7em;
+}
+
+.titulo{
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    font-weight: bold;
+}
+
+.descripcion{
+    color: rgb(0, 0, 0);
+    font-size: small;
+}
+
+.precio{
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* Boton mas y menos */
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input:disabled{
+    background: transparent !important;
+    color: black;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 2px;
+    background-color: rgb(255, 147, 51);
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    max-width: 5rem;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 1rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.mat-icon{
+    color: rgb(143, 141, 141);
+}
+
+.mat-button:hover .mat-icon{
+    color: rgb(254, 0, 0);
+}
+
+.total{
+    margin-top: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: .7em;
+    background-color: #ddd;
+}
+
+.renglon{
+    justify-content: flex-end;
+}
+
+.informacion{
+    font-weight: bold;
+    font-size: medium;
+}
+
+.monto{
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.pedido{
+    max-width: fit-content;
+    justify-content: flex-end;
+}
+
+.acciones{
+    margin-top: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-bottom: 15px;
+    justify-content: flex-end;
+}
+
+.botones{
+    max-width: fit-content;
+    margin: 5px;
+}
+
+.icono{
+    color: white;
+}

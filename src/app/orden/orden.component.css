@@ -1,0 +1,356 @@
+/**
+.row{
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+.col{
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(223, 22, 22);
+}**/
+
+.titulo, .subtitulo{
+    text-align: center;
+    color: rgb(255, 147, 51);
+}
+
+.primero{
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: rgb(255, 147, 51);
+    justify-content: center;
+}
+
+.imagen{
+    max-width: fit-content;
+    min-width: 200px;
+    min-height: 100px;
+    margin: 15px;
+}
+
+.tamanio{
+    max-width: 350px;
+    margin-bottom: 15px;
+}
+
+.apartado{
+    color: rgb(255, 147, 51);
+    margin-top: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.total{
+    color: rgb(29, 181, 34);
+    text-align: center;
+    max-width: 250px;
+}
+
+/* Botones tamaños */
+input[type=radio] {
+    display: none;
+}
+
+label {
+    display: flex;
+    margin: 4px;
+    padding: 8px;
+    background: transparent;
+    color: rgb(255, 147, 51);
+    min-width: 100px;
+    cursor: pointer;
+    border: 1px solid;
+    font-weight: bold;
+    font-size: 1rem;
+    justify-content: space-between;
+}
+
+span{
+    display: flex;
+    width: fit-content;
+    background: transparent !important;
+    color: auto;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+label:hover{
+    background: rgb(255, 147, 51);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+input[type=radio]:checked+label {
+    background: rgb(228, 228, 228);
+    color: rgb(77, 77, 77);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Boton mas y menos */
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input:disabled{
+    background: transparent !important;
+    color: black;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.numero{
+    max-width: 300px;
+}
+
+.cantidad{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 2px;
+    background-color: rgb(255, 147, 51);
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    max-width: 5rem;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 1rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.col .mitad{
+    display: flex;
+    justify-content: center;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 147, 51) !important;
+}
+  
+:host ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 147, 51) !important;
+} 
+  
+:host ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 147, 51) !important;;
+}
+
+.final{
+    border-top: 2px solid;
+    border-color: rgb(255, 147, 51);
+    padding-bottom: 70px;
+}
+
+.texto{
+    margin-top: 20px;
+    color: rgb(101, 101, 101);
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 147, 51);
+}
+
+.botones{
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-secondary, .btn-success{
+    max-height: 35px;
+    margin: 5px;
+}
+/**
+h2 {
+    color: rgb(227, 24, 55);
+    text-align: center;
+}
+
+h3 {
+    color: rgb(38, 175, 39);
+}
+
+h4 {
+    color: rgb(227, 24, 55);
+    text-align: center;
+}
+
+h5 {
+    margin-top: 15px;
+    color: rgb(0, 100, 145);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.row {
+    margin: 20px;
+    border-top: 2px solid;
+    color: rgb(0, 100, 145);
+}
+
+.col-1, .col-3{
+    display: block;
+    margin-top: 15px;
+}
+
+img {
+    margin: 15px;
+}
+
+.tamanios{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    max-width: 400px;
+}
+
+.btn {
+    margin: 15px;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 2px;
+    background-color: rgb(0, 100, 145);
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    max-width: 5rem;
+    padding: .5rem;
+    border: solid #ddd;
+    border-width: 0 2px;
+    font-size: 1rem;
+    height: 2rem;
+    text-align: center;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+label {
+    display: flex;
+    margin: 4px;
+    padding: 8px;
+    background: transparent;
+    color: rgb(0, 100, 145);
+    min-width: 100px;
+    cursor: pointer;
+    border: 1px solid;
+    font-weight: bold;
+    font-size: 1rem;
+    justify-content: space-between;
+}
+
+label:hover {
+    background: rgb(0, 100, 145);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+input[type=radio]:checked+label {
+    background: rgb(228, 228, 228);
+    color: rgb(77, 77, 77);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+**/

@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,6 +14,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
 //Componentes
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -22,11 +28,23 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PizzasComponent } from './pizzas/pizzas.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { PizzaCardComponent } from './pizzas/pizza-card/pizza-card.component';
+import { PromocionesComponent } from './promociones/promociones.component';
+import { AdicionalesComponent } from './adicionales/adicionales.component';
+import { AdicionalCardComponent } from './adicionales/adicional-card/adicional-card.component';
+import { PromocionCardComponent } from './promociones/promocion-card/promocion-card.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { OrdenComponent } from './orden/orden.component';
+import { BigCartComponent } from './carrito/big-cart/big-cart.component';
+import { SmallCartComponent } from './carrito/small-cart/small-cart.component';
 
 const routes : Routes=[
   {path: '', redirectTo: '/pizzas', pathMatch: 'full'},
   {path: 'auth', component: AuthComponent},
-  {path: 'pizzas', component: PizzasComponent}
+  {path: 'pizzas', component: PizzasComponent},
+  {path: 'promociones', component: PromocionesComponent},
+  {path: 'adicionales', component: AdicionalesComponent},
+  {path: 'orden', component: OrdenComponent},
+  {path: 'carrito', component: CarritoComponent}
 ];
 
 @NgModule({
@@ -39,7 +57,15 @@ const routes : Routes=[
     RegisterComponent,
     PizzasComponent,
     SidenavComponent,
-    PizzaCardComponent
+    PizzaCardComponent,
+    PromocionesComponent,
+    AdicionalesComponent,
+    AdicionalCardComponent,
+    PromocionCardComponent,
+    CarritoComponent,
+    OrdenComponent,
+    BigCartComponent,
+    SmallCartComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +78,14 @@ const routes : Routes=[
     MatButtonModule,
     MatSidenavModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTooltipModule,
+    MatSelectModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
