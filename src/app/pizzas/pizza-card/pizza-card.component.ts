@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
+import { Producto } from 'src/app/model/producto.model';
 
 export interface CardData {
   imageId: string;
@@ -33,7 +35,10 @@ export class PizzaCardComponent implements OnInit {
     state: "default"
   };
 
-  constructor() { }
+  @Input() pizza?: Producto;
+  @Input() codigo: string="";
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -44,6 +49,10 @@ export class PizzaCardComponent implements OnInit {
     } else {
       this.data.state = "default";
     }
+  }
+
+  ordenar(){
+    this.router.navigate(["/orden",this.codigo]);
   }
 
 }

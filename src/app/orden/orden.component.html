@@ -1,36 +1,24 @@
 <div class="container">
     <div class="row">
-        <h2 class="titulo">HAWAIANA</h2>
-        <h5 class="subtitulo">Pepperoni, Carne Molida, Jamón, Chorizo, Pimiento, Cebolla, Champiñones Frescos, Aceitunas y Extra Queso.</h5>
+        <h2 class="titulo">{{pizza?.nombre | uppercase}}</h2>
+        <h5 class="subtitulo">{{pizza?.especificacion}}</h5>
     </div>
     <div class="row primero">
         <div class="col imagen">
-            <img class="rounded img-fluid" src="https://assets.dominos.com.mx/dev/webOptimized/especialidad/HNC/HNC.png" alt="">
+            <img class="rounded img-fluid" src="{{pizza?.imagen}}" alt="">
         </div>
         <div class="col tamanio">
             <div class="row"><h5 class="apartado">Tamaño</h5></div>
             <div class="row">
-                <input type="radio" name="tamanio" value="1" id="TamC" checked>
-                <label for="TamC">Chica 25 cm 
-                    <span>
-                        <mat-divider [vertical]="true"></mat-divider>
-                        3<mat-icon>accessibility_new</mat-icon>
-                    </span>
-                </label>
-                <input type="radio" name="tamanio" value="1.3" id="TamM">
-                <label for="TamM">Mediana 35 cm 
-                    <span>
-                        <mat-divider [vertical]="true"></mat-divider>
-                        5<mat-icon>accessibility_new</mat-icon>
-                    </span>
-                </label>
-                <input type="radio" name="tamanio" value="1.7" id="TamG">
-                <label for="TamG">Grande 45 cm 
-                    <span>
-                        <mat-divider [vertical]="true"></mat-divider>
-                        8<mat-icon>accessibility_new</mat-icon>
-                    </span>
-                </label>
+                <ng-container *ngFor="let tamanio of listOfTamanios">
+                    <input type="radio" name="tamanio" value="{{tamanio.costo}}" id="{{tamanio.nombre}}" (click)="calculo()" checked>
+                    <label for="{{tamanio.nombre}}">{{tamanio.nombre}}
+                        <span>
+                            <mat-divider [vertical]="true"></mat-divider>
+                            {{tamanio.personas}}<mat-icon>accessibility_new</mat-icon>
+                        </span>
+                    </label>
+                </ng-container>
             </div>
         </div>
     </div>
@@ -39,12 +27,13 @@
             <div class="row"><h5 class="apartado">Cantidad</h5></div>
             <div class="cantidad">
                 <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-                    <input type="number" class="quantity" min="1" max="20" name="quantity" value="1" id="quantity" name="quantity" disabled>
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" (click)="calculo()"></button>
+                    <input type="number" class="quantity" min="1" max="20" name="quantity" value="{{pizza?.cantidad}}" id="quantity" name="quantity" disabled>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" (click)="calculo()"></button>
                 </div>
             </div>
         </div>
+        <!--
         <div class="col">
             <div class="row"><h5 class="apartado">Mitad y mitad</h5></div>
             <div class="row">
@@ -52,12 +41,12 @@
                     <mat-form-field>
                         <mat-label>Mitad izquierda</mat-label>
                         <mat-select>
-                          <mat-option value="exeex">
+                        <mat-option value="exeex">
                             Opcion 1
-                          </mat-option>
-                          <mat-option value="ss">
+                        </mat-option>
+                        <mat-option value="ss">
                             Opcion 2
-                          </mat-option>
+                        </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
@@ -65,27 +54,27 @@
                     <mat-form-field>
                         <mat-label>Mitad derecha</mat-label>
                         <mat-select>
-                          <mat-option value="exeex">
+                        <mat-option value="exeex">
                             Opcion 1
-                          </mat-option>
-                          <mat-option value="ss">
+                        </mat-option>
+                        <mat-option value="ss">
                             Opcion 2
-                          </mat-option>
+                        </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div class="col total">
             <div class="row"><h5 class="apartado">Total</h5></div>
             <div class="row">
-                <h2 class="total">$18032</h2>
+                <h2 class="total">${{total}}</h2>
             </div>
         </div>
     </div>
     <div class="row final">
         <div class="col texto">
-            <p>¿Quieres cambiar algún ingrediente? Utiliza nuestra <a routerLink="/pizzas">Pizza Mágica</a></p>
+            <p>¿Quieres cambiar algún ingrediente? Utiliza nuestra <a routerLink="/pizza_magica">Pizza Mágica</a></p>
         </div>
         <div class="col botones">
             <button mat-flat-button class="btn-secondary"><mat-icon>cancel</mat-icon>Cancelar</button>

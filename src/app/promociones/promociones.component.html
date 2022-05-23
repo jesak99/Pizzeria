@@ -13,6 +13,6 @@
         <button mat-flat-button class="btn-success">Agregar</button>
    </div>
    <div class="cards">
-       <app-promocion-card></app-promocion-card>
+       <app-promocion-card *ngFor="let promocion of listoOfPromociones; let i=index" [promocion]="promocion" [index]="i"></app-promocion-card>
    </div>
 </div>

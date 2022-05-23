@@ -10,6 +10,10 @@
     display: none;
 }
 
+img{
+    cursor: pointer;
+}
+
 .pie{
     text-align: center;
     font-size: large;

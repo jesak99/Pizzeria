@@ -1,0 +1,51 @@
+<h3 *ngIf="editMode===false" class="amarillo" mat-dialog-title><mat-icon>local_pizza</mat-icon>Agregar pizza</h3>
+<h3 *ngIf="editMode===true" class="amarillo" mat-dialog-title><mat-icon>local_pizza</mat-icon>Editar pizza</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" placeholder="Ej. Hawaiana" formControlName="nombre">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput rows="6" placeholder="La pizza que unos cuestionan pero todos aman. Jamón, piña." formControlName="descripcion"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Ingredientes</mat-label>
+                        <mat-select formControlName="ingredientes" [(value)]="selectedIngredientes" multiple>
+                            <mat-option *ngFor="let ingrediente of ingredientesList" [value]="ingrediente.nombre">{{ingrediente.nombre}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Precio</mat-label>
+                        <input matInput type="number" placeholder="Ej. 199" formControlName="precio">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Foto</mat-label>
+                        <input matInput placeholder="Link a la foto" formControlName="foto">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="row imagen">
+            <img class="img-responsive" src="{{form.value.foto}}">
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button class="btn-secondary" mat-dialog-close><mat-icon>cancel</mat-icon>Cancelar</button>
+        <button mat-button type="submit" class="btn-success" [disabled]="form.invalid" [mat-dialog-close]="true"><mat-icon>save</mat-icon>Guardar</button>
+    </mat-dialog-actions>
+</form>

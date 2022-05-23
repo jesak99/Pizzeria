@@ -1,0 +1,127 @@
+<div class="container-fluid">
+    <h2 class="amarillo">Menú de pizzas</h2>
+    <div class="row acciones">
+        <div class="col botones"><button mat-button class="btn-danger" (click)="openPizzas()"><mat-icon>local_pizza</mat-icon>NUEVA PIZZA</button></div>
+        <div class="col botones"><button mat-button class="btn-warning"><mat-icon>add</mat-icon>NUEVO INGREDIENTE</button></div>
+        <div class="col botones"><button mat-button class="btn-success"><mat-icon>add</mat-icon>NUEVA ESPECIALIDAD</button></div>
+        <div class="col botones"><button mat-button class="btn-primary"><mat-icon>add</mat-icon>NUEVO TAMAÑO</button></div>
+    </div>
+    <mat-divider></mat-divider>
+    
+    <div class="row">
+        <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Escribe algo a buscar..." #input>
+        </mat-form-field>
+    </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.codigo}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="imagen">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+        <td mat-cell *matCellDef="let row">
+            <div class="col imagen">
+                <img class="img-fluid" src="{{row.imagen}}" alt=""> 
+            </div>
+        </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+      </ng-container>
+  
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
+        <td mat-cell *matCellDef="let row"> {{row.descripcion}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="especificacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ingredientes </th>
+        <td mat-cell *matCellDef="let row"> {{row.especificacion}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="costo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+        <td mat-cell *matCellDef="let row"> {{row.costo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
+        <td mat-cell *matCellDef="let row">
+            <button mat-button (click)="openEditPizzas(row)"><mat-icon class="edit">edit</mat-icon></button>
+            <button mat-button><mat-icon class="delete">delete_outline</mat-icon></button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No se han encontrado datos coincidentes con "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
+
+<!-- Columna producto
+<ng-container matColumnDef="foto">
+    <th mat-header-cell *matHeaderCellDef> Foto </th>
+    <td mat-cell *matCellDef="let pizza"> 
+        <div class="col imagen">
+            <img class="img-fluid" src="{{pizza.foto}}" alt=""> 
+        </div>
+    </td>
+</ng-container>-->
+<!-- Columna nombre
+<ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let pizza">
+        <p>{{pizza.nombre | uppercase}}</p>
+    </td>
+</ng-container>-->
+<!-- Columna descripcion
+<ng-container matColumnDef="descripcion">
+    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+    <td mat-cell *matCellDef="let pizza">
+        <p class="descripcion">{{pizza.descripcion}}</p>
+    </td>
+</ng-container>-->
+<!-- Columna ingredientes
+<ng-container matColumnDef="ingredientes">
+    <th mat-header-cell *matHeaderCellDef> Ingredientes </th>
+    <td mat-cell *matCellDef="let pizza">
+        <p class="ingredientes">{{pizza.ingredientes}}</p>
+    </td>
+</ng-container>-->
+<!-- Columna precio 
+<ng-container matColumnDef="precio">
+    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <td mat-cell *matCellDef="let pizza">
+        <p>{{pizza.precio}}</p>
+    </td>
+</ng-container>-->
+<!-- Columna acciones 
+<ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let pizza">
+        <p>
+            <button mat-button (click)="openEditPizzas(pizza)"><mat-icon class="edit">edit</mat-icon></button>
+            <button mat-button><mat-icon class="delete">delete_outline</mat-icon></button>
+        </p>
+    </td>
+</ng-container>-->

@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="amarillo">Nuestras pizzas</h2>
     <div class="cards">
-      <app-pizza-card></app-pizza-card>
+      <app-pizza-card *ngFor="let pizza of listOfPizzas" [pizza]="pizza" [codigo]="pizza.codigo"></app-pizza-card>
     </div>
 </div>

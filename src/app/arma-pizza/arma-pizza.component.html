@@ -1,0 +1,76 @@
+<div class="container">
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Tamaño y cantidad</ng-template>
+                <!-- Aquí va a ir todo -->
+                <div class="row">
+                    <div class="col">
+                        <div class="row imagen">
+                            <img class="rounded img-fluid" src="https://assets.dominos.com.mx/dev/webOptimized/especialidad/HNC/HNC.png" alt="">
+                        </div>
+                        <div class="row">
+                            <div class="cantidad">
+                                <div class="number-input">
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                                    <input type="number" class="quantity" min="1" max="20" name="quantity" value="1" id="quantity" name="quantity" disabled>
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">Tamaño</div>
+                        <div class="row">
+                            <input type="radio" name="tamanio" value="1" id="TamC" checked>
+                            <label for="TamC">Chica 25 cm 
+                                <span>
+                                    <mat-divider [vertical]="true"></mat-divider>
+                                    3<mat-icon>accessibility_new</mat-icon>
+                                </span>
+                            </label>
+                            <input type="radio" name="tamanio" value="1.3" id="TamM">
+                            <label for="TamM">Mediana 35 cm 
+                                <span>
+                                    <mat-divider [vertical]="true"></mat-divider>
+                                    5<mat-icon>accessibility_new</mat-icon>
+                                </span>
+                            </label>
+                            <input type="radio" name="tamanio" value="1.7" id="TamG">
+                            <label for="TamG">Grande 45 cm 
+                                <span>
+                                    <mat-divider [vertical]="true"></mat-divider>
+                                    8<mat-icon>accessibility_new</mat-icon>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Salsa y queso</ng-template>
+                <!-- Aquí va a ir todo -->
+                <div class="row"></div>
+                <!---->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Ingredientes</ng-template>
+          <p>You are now done.</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+    </mat-stepper>  
+</div>

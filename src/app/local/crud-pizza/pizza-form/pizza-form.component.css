@@ -1,0 +1,36 @@
+.mat-form-field{
+    width: 100%;
+}
+
+.amarillo{
+    color: rgb(255, 147, 51);
+    text-align: center;
+}
+
+img{
+    max-width: 200px;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 147, 51) !important;
+}
+  
+:host ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 147, 51) !important;
+} 
+  
+:host ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 147, 51) !important;;
+}
+
+:host::ng-deep.mat-form-field-flex {
+    background-color: rgba(255, 147, 51,0.2) !important;;
+}

@@ -1,4 +1,57 @@
-<mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-    <mat-sidenav-content>Main content</mat-sidenav-content>
-</mat-sidenav-container>
+<mat-drawer-container class="minav" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over">
+    <p class="imagen"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="100" width="100" alt="Black and White Portrait of a Man" loading="lazy"/></p>
+    <p class="usuario">Jesús Cruz Morales</p>
+    <p class="rol">Administrador</p>
+    <!-- Dashboard -->
+    <mat-divider></mat-divider>
+    <input type="radio" name="opciones" id="dashboard">
+    <label for="dashboard"><mat-icon>dashboard</mat-icon>Dashboard</label>
+    <!-- Pizzas -->
+    <mat-divider></mat-divider>
+    <input type="radio" name="opciones" id="pizzas" routerLink="pizzas" checked>
+    <label for="pizzas"><mat-icon>local_pizza</mat-icon>Pizzas</label>
+    <!-- Usuarios -->
+    <mat-divider></mat-divider>
+    <input type="radio" name="opciones" id="usuarios" routerLink="usuarios">
+    <label for="usuarios"><mat-icon>supervisor_account</mat-icon>Usuarios</label>
+    <!-- Promociones -->
+    <mat-divider></mat-divider>
+    <input type="radio" name="opciones" id="promociones" routerLink="promociones">
+    <label for="promociones"><mat-icon> local_offer</mat-icon>Promociones</label>
+    <!-- Adicionales -->
+    <mat-divider></mat-divider>
+    <input type="radio" name="opciones" id="bebidas">
+    <label for="bebidas"><mat-icon>local_drink</mat-icon>Bebidas</label>
+    <input type="radio" name="opciones" id="entradas">
+    <label for="entradas"><mat-icon>restaurant</mat-icon>Entradas</label>
+    <input type="radio" name="opciones" id="postres">
+    <label for="postres"><mat-icon>cake</mat-icon>Postres</label>
+    <input type="radio" name="opciones" id="otros">
+    <label for="otros"><mat-icon>fastfood</mat-icon>Otros</label>
+    <!-- Ajustes -->
+    <mat-divider></mat-divider>
+    <input type="radio" name="opciones" id="ajustes">
+    <label for="ajustes"><mat-icon>settings</mat-icon>Ajustes</label>
+    <!-- Cerrar sesión -->
+    <mat-divider></mat-divider>
+    <button type="button" mat-button class="btnSideNav">
+      <mat-icon>exit_to_app</mat-icon>Cerrar sesión
+    </button>
+    <mat-divider></mat-divider>
+  </mat-drawer>
+  <!-- Boton para mostrar el sidenav -->
+  <div class="navbar navbar-expand-lg navbar-light fondo fixed-top justify-content-between">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button type="button" mat-button color="primary">
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+  <!-- Router para redirigir a cada lugar -->
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

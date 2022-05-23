@@ -7,7 +7,7 @@
                 <span>Bebidas</span>
             </ng-template>
             <div class="cards">
-                <app-adicional-card></app-adicional-card>
+                <app-adicional-card (evento)="ngOnInit()" *ngFor="let bebida of listOfBebidas; let i=index" [producto]="bebida" [index]="i"></app-adicional-card>
             </div>
         </mat-tab>
         <mat-tab>
@@ -16,7 +16,7 @@
                 <span>Entradas</span>
             </ng-template>
             <div class="cards">
-                <app-adicional-card></app-adicional-card>
+                <app-adicional-card (evento)="ngOnInit()" *ngFor="let entrada of listOfEntradas; let i=index" [producto]="entrada" [index]="i"></app-adicional-card>
             </div>
         </mat-tab>
         <mat-tab>
@@ -25,7 +25,7 @@
                 <span>Postres</span>
             </ng-template>
             <div class="cards">
-                <app-adicional-card></app-adicional-card>
+                <app-adicional-card (evento)="ngOnInit()" *ngFor="let postre of listOfPostres; let i=index" [producto]="postre" [index]="i"></app-adicional-card>
             </div>
         </mat-tab>
         <mat-tab>
@@ -34,7 +34,7 @@
                 <span>Otros</span>
             </ng-template>
             <div class="cards">
-                <app-adicional-card></app-adicional-card>
+                <app-adicional-card (evento)="ngOnInit()" *ngFor="let otro of listOfOtros; let i=index" [producto]="otro" [index]="i"></app-adicional-card>
             </div>
         </mat-tab>
     </mat-tab-group>

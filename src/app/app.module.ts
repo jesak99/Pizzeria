@@ -19,6 +19,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 //Componentes
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -36,15 +41,37 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { OrdenComponent } from './orden/orden.component';
 import { BigCartComponent } from './carrito/big-cart/big-cart.component';
 import { SmallCartComponent } from './carrito/small-cart/small-cart.component';
+import { ArmaPizzaComponent } from './arma-pizza/arma-pizza.component';
+import { CrudPizzaComponent } from './local/crud-pizza/crud-pizza.component';
+import { CrudAdicionalesComponent } from './local/crud-adicionales/crud-adicionales.component';
+import { CrudUsuariosComponent } from './local/crud-usuarios/crud-usuarios.component';
+import { CrudPromocionesComponent } from './local/crud-promociones/crud-promociones.component';
+import { PizzaFormComponent } from './local/crud-pizza/pizza-form/pizza-form.component';
+import { AdicionalFormComponent } from './local/crud-adicionales/adicional-form/adicional-form.component';
+import { PromocionFormComponent } from './local/crud-promociones/promocion-form/promocion-form.component';
+import { UsuarioFormComponent } from './local/crud-usuarios/usuario-form/usuario-form.component';
 
 const routes : Routes=[
-  {path: '', redirectTo: '/pizzas', pathMatch: 'full'},
+  {path: '', redirectTo: '/nuestras-pizzas', pathMatch: 'full'},
   {path: 'auth', component: AuthComponent},
-  {path: 'pizzas', component: PizzasComponent},
-  {path: 'promociones', component: PromocionesComponent},
-  {path: 'adicionales', component: AdicionalesComponent},
-  {path: 'orden', component: OrdenComponent},
-  {path: 'carrito', component: CarritoComponent}
+  {path: 'nuestras-pizzas', component: PizzasComponent},
+  {path: 'paquetes-promociones', component: PromocionesComponent},
+  {path: 'nuestros-adicionales', component: AdicionalesComponent},
+  {path: 'orden/:codigo', component: OrdenComponent},
+  {path: 'carrito', component: CarritoComponent},
+  {path: 'pizza_magica', component: ArmaPizzaComponent},
+  {path: 'pizzas', component: CrudPizzaComponent},
+  {path: 'pizza-add', component: PizzaFormComponent},
+  {path: 'pizza-edit/:index', component: PizzaFormComponent},
+  {path: 'usuarios', component: CrudUsuariosComponent},
+  {path: 'user-add', component: UsuarioFormComponent},
+  {path: 'user-edit/:index', component: UsuarioFormComponent},
+  {path: 'promociones', component: CrudPromocionesComponent},
+  {path: 'promocion-add', component: PromocionFormComponent},
+  {path: 'promocion-edit/:index', component: PromocionFormComponent},
+  {path: 'adicionales', component: CrudAdicionalesComponent},
+  {path: 'adicional-add', component: AdicionalFormComponent},
+  {path: 'adicional-edit/:index', component: AdicionalFormComponent}
 ];
 
 @NgModule({
@@ -65,7 +92,16 @@ const routes : Routes=[
     CarritoComponent,
     OrdenComponent,
     BigCartComponent,
-    SmallCartComponent
+    SmallCartComponent,
+    ArmaPizzaComponent,
+    CrudPizzaComponent,
+    CrudAdicionalesComponent,
+    CrudUsuariosComponent,
+    CrudPromocionesComponent,
+    PizzaFormComponent,
+    AdicionalFormComponent,
+    PromocionFormComponent,
+    UsuarioFormComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +121,12 @@ const routes : Routes=[
     MatSelectModule,
     MatDividerModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule,
+    MatStepperModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

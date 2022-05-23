@@ -1,0 +1,66 @@
+.amarillo{
+    color: rgb(255, 147, 51);
+    text-align: center;
+}
+
+.row{
+    padding-top: 15px;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 147, 51) !important;
+}
+  
+:host ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 147, 51) !important;
+} 
+  
+:host ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 147, 51) !important;;
+}
+
+:host::ng-deep.mat-form-field-flex {
+    background-color: rgba(255, 147, 51,0.2) !important;;
+}
+
+table{
+    width: 100%;
+    box-shadow: 2px 4px 8px rgba(38, 38, 38, 0.2);
+}
+
+.mat-header-cell {
+    color: rgb(116, 115, 115);
+    font-weight: bold;
+    font-size: medium;
+}
+
+.imagen{
+    max-width: 150px;
+}
+
+img{
+    border-radius: .7em;
+}
+
+.acciones{
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-bottom: 15px;
+    justify-content: center;
+}
+
+.botones{
+    max-width: fit-content;
+    margin: 5px;
+}
+
+.mat-button:hover .edit{
+    color: rgb(254, 144, 0);
+}
+
+.mat-button:hover .delete{
+    color: rgb(254, 0, 0);
+}
