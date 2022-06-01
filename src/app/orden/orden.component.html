@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row segundo">
         <div class="col numero">
             <div class="row"><h5 class="apartado">Cantidad</h5></div>
             <div class="cantidad">
@@ -77,8 +77,8 @@
             <p>¿Quieres cambiar algún ingrediente? Utiliza nuestra <a routerLink="/pizza_magica">Pizza Mágica</a></p>
         </div>
         <div class="col botones">
-            <button mat-flat-button class="btn-secondary"><mat-icon>cancel</mat-icon>Cancelar</button>
-            <button mat-flat-button class="btn-success"><mat-icon>add_shopping_cart</mat-icon>Agregar</button>
+            <button mat-flat-button class="btn-secondary" routerLink="/nuestras-pizzas"><mat-icon>cancel</mat-icon>Cancelar</button>
+            <button mat-flat-button class="btn-success" (click)="actualizarProducto()"><mat-icon>add_shopping_cart</mat-icon>Agregar</button>
         </div>
     </div>
 </div>

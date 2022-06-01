@@ -50,6 +50,8 @@ import { PizzaFormComponent } from './local/crud-pizza/pizza-form/pizza-form.com
 import { AdicionalFormComponent } from './local/crud-adicionales/adicional-form/adicional-form.component';
 import { PromocionFormComponent } from './local/crud-promociones/promocion-form/promocion-form.component';
 import { UsuarioFormComponent } from './local/crud-usuarios/usuario-form/usuario-form.component';
+import { EnvioComponent } from './envio/envio.component';
+import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 
 const routes : Routes=[
   {path: '', redirectTo: '/nuestras-pizzas', pathMatch: 'full'},
@@ -101,7 +103,9 @@ const routes : Routes=[
     PizzaFormComponent,
     AdicionalFormComponent,
     PromocionFormComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    EnvioComponent,
+    GooglemapsComponent
   ],
   imports: [
     BrowserModule,

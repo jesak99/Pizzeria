@@ -10,20 +10,21 @@ import { ProductoService } from 'src/app/service/producto.service';
 export class AdicionalCardComponent implements OnInit {
   @Input() producto!: Producto;
   @Input() index: number=0;
-  @Output() evento = new EventEmitter();
 
   constructor(
     private productoService: ProductoService
   ) { }
 
   ngOnInit(): void {
+    this.producto = this.productoService.getProducto(this.producto.codigo);
   }
 
   actualizarProducto(){
     var cantidad = (document.getElementById("quantity") as HTMLInputElement).value;
     this.productoService.updateCantidad(this.producto.codigo, parseInt(cantidad));
-    this.evento.emit(this.productoService);
+    this.productoService.updateTotal(this.producto.codigo, parseInt(cantidad)*this.producto.costo);
+    this.productoService.agregarCarrito(this.productoService.getProducto(this.producto.codigo));
     console.log(this.productoService.getProducto(this.producto.codigo));
-  }
+  } 
 
 }

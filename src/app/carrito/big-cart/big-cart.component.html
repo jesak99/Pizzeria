@@ -23,9 +23,9 @@
             <th mat-header-cell *matHeaderCellDef> Cantidad </th>
             <td mat-cell *matCellDef="let element">
                 <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" (click)="actualizarProducto(element.codigo)"></button>
                     <input type="number" class="quantity" min="1" max="20" name="quantity" value="{{element.cantidad}}" id="quantity" disabled>
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" (click)="actualizarProducto(element.codigo)"></button>
                 </div>
             </td>
         </ng-container>
@@ -37,7 +37,7 @@
         <!-- Columna borrar -->
         <ng-container matColumnDef="borrar">
           <th mat-header-cell *matHeaderCellDef>  </th>
-          <td mat-cell *matCellDef="let element"><button mat-button><mat-icon>delete_outline</mat-icon></button></td>
+          <td mat-cell *matCellDef="let element"><button mat-button matTooltip="Eliminar" (click)="deleteProducto(element.codigo)"><mat-icon>delete_outline</mat-icon></button></td>
         </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -55,7 +55,7 @@
     </div>
     <div class="row acciones">
         <div class="col botones"><button mat-flat-button class="btn-danger" (click)="vaciarCarrito()"><mat-icon class="icono">remove_shopping_cart</mat-icon>VACIAR CARRITO</button></div>
-        <div class="col botones"><button mat-flat-button class="btn-primary"><mat-icon class="icono">shopping_cart</mat-icon>SEGUIR COMPRANDO</button></div>
-        <div class="col botones"><button mat-flat-button class="btn-success"><mat-icon class="icono">shop</mat-icon>FINALIZAR PEDIDO</button></div>
+        <div class="col botones"><button mat-flat-button class="btn-primary" routerLink="/nuestras-pizzas"><mat-icon class="icono">shopping_cart</mat-icon>SEGUIR COMPRANDO</button></div>
+        <div class="col botones"><button mat-flat-button class="btn-success" (click)="openEnvio()"><mat-icon class="icono">shop</mat-icon>FINALIZAR PEDIDO</button></div>
     </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Producto } from 'src/app/model/producto.model';
+import { ProductoService } from 'src/app/service/producto.service';
 
 @Component({
   selector: 'app-small-cart',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmallCartComponent implements OnInit {
   panelOpenState = false;
+  listOfProductos : Producto[] = [];
 
-  constructor() { }
+  constructor(private productoService: ProductoService) { }
 
   ngOnInit(): void {
+    this.listOfProductos = this.productoService.getCarrito();
+    this.productoService.listChangedEvent.subscribe((listOfPizzas: Producto[])=>{
+      this.listOfProductos = this.productoService.getCarrito();
+    });
   }
 
 }

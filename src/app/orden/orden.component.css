@@ -23,6 +23,10 @@
     justify-content: center;
 }
 
+.segundo{
+    justify-content: center;
+}
+
 .imagen{
     max-width: fit-content;
     min-width: 200px;
@@ -209,7 +213,20 @@ a{
     justify-content: flex-end;
 }
 
-.btn-secondary, .btn-success{
+.btn-secondary{
+    background-color: rgb(255, 181, 98);
+    color:rgb(63, 62, 62);
+    max-height: 35px;
+    margin: 5px;
+}
+
+.btn-success{
+    background-image: 
+    radial-gradient(ellipse at top right, rgba(255,147,52,1) 31%, rgba(0,163,203,0) 30%),
+    linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,147,52,1) 33%, rgba(255,147,52,1) 33%, rgba(255,147,52,1) 66%);
+  	background-size: 100% 100%;
+    color: white;
+    font-weight: bolder;
     max-height: 35px;
     margin: 5px;
 }

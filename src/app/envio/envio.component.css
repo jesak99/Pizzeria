@@ -1,0 +1,86 @@
+.mat-dialog-title{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.uno{
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: rgb(251,176,60);
+}
+
+.amarillo{
+    color: rgb(255, 147, 51);
+    text-align: center;
+    font-weight: bolder;
+}
+
+.cafe{
+    color: rgb(50, 20, 2);
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+    text-align: center;
+    font-weight: bold;
+    font-size: small;
+    margin: 0;
+    padding: 0;
+}
+
+.rojo{
+    color: red;
+    font-weight: bolder;
+}
+
+.btn-outline-dark{
+    color: white;
+    font-size: medium;
+    max-width: 250px;
+    border-color: white;
+    border-radius: 50px;
+    background-image: 
+    radial-gradient(ellipse at top right, rgba(255,147,52,1) 31%, rgba(0,163,203,0) 30%),
+    linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,147,52,1) 33%, rgba(255,147,52,1) 33%, rgba(255,147,52,1) 66%);
+  	background-size: 100% 100%;
+    transition: all 0.5s;
+}
+
+.btn-outline-dark:hover{
+    color: white;
+    font-size: large;
+}
+
+@media screen and (max-width: 316px) {
+    .btn-outline-dark{
+        font-size: small;
+    }
+
+    .btn-outline-dark:hover{
+        color: white;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .uno{
+        border-right-style: none;
+        border-right-width: none;
+        border-right-color: none;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: rgb(251,176,60);
+    }
+}

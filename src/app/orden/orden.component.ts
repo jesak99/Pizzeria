@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Producto } from '../model/producto.model';
@@ -11,7 +11,7 @@ import { TamanioService } from '../service/tamanio.service';
   templateUrl: './orden.component.html',
   styleUrls: ['./orden.component.css']
 })
-export class OrdenComponent implements OnInit {
+export class OrdenComponent implements OnInit, AfterViewInit {
   form!: FormGroup;
   listOfTamanios: Tamanio[]=[];
   codigo!: string;
@@ -34,8 +34,13 @@ export class OrdenComponent implements OnInit {
       if(params['codigo']){
         this.codigo=params['codigo'];
         this.pizza = this.productoService.getProducto(this.codigo);
+        this.calculo();
       }
     });
+  }
+
+  ngAfterViewInit() {
+    this.calculo();
   }
 
   calculo(){
@@ -45,6 +50,15 @@ export class OrdenComponent implements OnInit {
     console.log(parseFloat(tamanio));
     console.log(this.pizza.costo);
     this.total = (this.pizza.costo+parseFloat(tamanio))*parseFloat(cantidad);
+  }
+
+  actualizarProducto(){
+    var cantidad = (document.getElementById("quantity") as HTMLInputElement).value;
+    this.productoService.updateCantidad(this.pizza.codigo, parseInt(cantidad));
+    this.productoService.updateTotal(this.pizza.codigo, parseInt(cantidad)*this.productoService.getProducto(this.pizza.codigo).costo);
+    this.productoService.agregarCarrito(this.productoService.getProducto(this.pizza.codigo));
+    console.log(this.productoService.getProducto(this.pizza.codigo));
+    this.router.navigate(["/nuestras-pizzas"]);
   }
 
 }

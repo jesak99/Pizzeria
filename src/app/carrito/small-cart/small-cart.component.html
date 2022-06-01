@@ -1,27 +1,25 @@
 <div class="container">
-    <mat-accordion>
+    <mat-accordion *ngFor="let producto of listOfProductos">
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
-                <mat-panel-title>Hawaiana/Extravaganza</mat-panel-title>
+                <mat-panel-title>{{producto.nombre}}</mat-panel-title>
             </mat-expansion-panel-header>
             <ng-template matExpansionPanelContent>
-                <div class="row encabezado">Ingredientes:</div>
-                <div class="row especificacion">Piña y Jamón</div>
-                <div class="row encabezado">Tamaño:</div>
-                <div class="row especificacion">Mediana 30 cm</div>
+                <div class="row encabezado">Descripción:</div>
+                <div class="row especificacion">{{producto.especificacion}}</div>
                 <div class="row especificacion">
-                    <img class="img-fluid" src="https://assets.dominos.com.mx/dev/webOptimized/especialidad/HNC/HNC.png" alt=""> 
+                    <img class="img-fluid" src="{{producto.imagen}}" alt=""> 
                 </div>
                 <div class="row encabezado">Cantidad:</div>
                 <div class="cantidad">
                     <div class="number-input">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-                        <input type="number" class="quantity" min="1" max="20" name="quantity" value="1" id="quantity" name="quantity" disabled>
+                        <input type="number" class="quantity" min="1" max="20" name="quantity" value="{{producto.cantidad}}" id="quantity" name="quantity" disabled>
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                     </div>
                 </div>
                 <div class="row encabezado">Precio:</div>
-                <div class="row especificacion total">$199.00</div>
+                <div class="row especificacion total">${{producto.total}}</div>
                 <div class="row">
                     <button mat-button class="borrar"><mat-icon>delete_outline</mat-icon>Eliminar</button>
                 </div>
