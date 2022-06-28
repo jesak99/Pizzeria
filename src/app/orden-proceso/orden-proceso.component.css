@@ -1,0 +1,128 @@
+h3{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(255, 147, 51); 
+}
+
+.imprimir{
+    margin-right: 15px;
+    color: rgb(50, 20, 2);
+    cursor: pointer;
+}
+
+.encabezado{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-image: url("/assets/pizza.png");
+    background-size: 5rem;
+    background-repeat: no-repeat;
+}
+
+p{
+    font-size: x-small;
+    margin: 0;
+    padding: 0;
+    color: rgb(50, 20, 2);
+}
+
+.titulo{
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(50, 20, 2);
+}
+
+.rfc{
+    font-weight: bold;
+}
+
+.col{
+    margin: 0;
+    padding: 0;
+}
+
+.icono{
+    font-size: large;
+    color: rgb(251, 176, 60);
+}
+
+.direccionUser{
+    max-width: 300px;
+    font-size: small;
+    text-align: justify;
+}
+
+.categoria{
+    font-weight: bold;
+}
+
+.cantt{
+    font-size: x-small;
+    max-width: 40px;
+}
+
+.preciot{
+    font-size: x-small;
+    max-width: 80px;
+}
+
+.totalt{
+    font-size: x-small;
+    max-width: 80px;
+}
+
+.cant{
+    font-size: x-small;
+    max-width: 40px;
+    text-align: center;
+}
+
+.art{
+    font-size: x-small;
+    max-width: 150px;
+    overflow: hidden;
+}
+
+.precio{
+    font-size: x-small;
+    max-width: 50px;
+    text-align: end;
+}
+
+.total{
+    font-size: x-small;
+    max-width: 80px;
+    text-align: end;
+}
+
+.etiqueta{
+    text-align: end;
+    font-size: x-small;
+    font-weight: bold;
+    max-width: 240px;
+    margin: 0;
+    padding: 0;
+    color: rgb(50, 20, 2);
+}
+
+.monto{
+    text-align: end;
+    font-size: x-small;
+    font-weight: bold;
+    max-width: 80px;
+    margin: 0;
+    padding: 0;
+    color: rgb(50, 20, 2);
+}
+
+.pie{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}

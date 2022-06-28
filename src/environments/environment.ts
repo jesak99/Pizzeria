@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ApiKeyGoogleMaps: 'AIzaSyC-----api key',
+  email: "17161090@itoaxaca.edu.mx",
+  key: "e882e86f-5c4a-4e70-ac1d-b42738012b9d"
 };
 
 /*

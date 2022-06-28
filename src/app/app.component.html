@@ -1,9 +1,17 @@
-<div *ngIf="true">
+<div *ngIf="tipo=='cliente'">
   <app-header></app-header>
   <div class="container-fluid">
+    <div class="row" *ngIf="listOrdenes.length>0">
+      <div class="col" *ngFor="let orden of listOrdenes">
+        <button mat-button (click)="openOrden(orden)">
+          <p>Orden {{orden.codigo.substring(15,24)}}</p>
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </button>
+      </div>
+    </div>
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
 </div>
 
-<app-sidenav *ngIf="false"></app-sidenav>
+<app-sidenav *ngIf="tipo=='admin'"></app-sidenav>

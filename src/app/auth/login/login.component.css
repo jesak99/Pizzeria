@@ -48,11 +48,11 @@ a{
 .click{
     cursor: pointer;
 }
-
+/**
 input.ng-invalid.ng-touched{
     box-shadow: 0 0.2rem 1rem 0 rgba(213,93,100,1);
     border: 1px solid rgba(213,93,100,1);
-}
+}**/
 
 .mat-form-field{
     width: 100%;

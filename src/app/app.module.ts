@@ -24,6 +24,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatProgressBarModule}  from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
+
 //Componentes
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -51,7 +54,10 @@ import { AdicionalFormComponent } from './local/crud-adicionales/adicional-form/
 import { PromocionFormComponent } from './local/crud-promociones/promocion-form/promocion-form.component';
 import { UsuarioFormComponent } from './local/crud-usuarios/usuario-form/usuario-form.component';
 import { EnvioComponent } from './envio/envio.component';
-import { GooglemapsComponent } from './googlemaps/googlemaps.component';
+import { FinalizarOrdenComponent } from './finalizar-orden/finalizar-orden.component';
+import { OrdenProcesoComponent } from './orden-proceso/orden-proceso.component';
+import { LoaderComponent } from './loader/loader.component';
+//import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 
 const routes : Routes=[
   {path: '', redirectTo: '/nuestras-pizzas', pathMatch: 'full'},
@@ -73,7 +79,8 @@ const routes : Routes=[
   {path: 'promocion-edit/:index', component: PromocionFormComponent},
   {path: 'adicionales', component: CrudAdicionalesComponent},
   {path: 'adicional-add', component: AdicionalFormComponent},
-  {path: 'adicional-edit/:index', component: AdicionalFormComponent}
+  {path: 'adicional-edit/:index', component: AdicionalFormComponent},
+  {path: 'verificar-pedido', component: FinalizarOrdenComponent}
 ];
 
 @NgModule({
@@ -105,7 +112,10 @@ const routes : Routes=[
     PromocionFormComponent,
     UsuarioFormComponent,
     EnvioComponent,
-    GooglemapsComponent
+    FinalizarOrdenComponent,
+    OrdenProcesoComponent,
+    LoaderComponent,
+    //GooglemapsComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +140,9 @@ const routes : Routes=[
     MatStepperModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatProgressBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

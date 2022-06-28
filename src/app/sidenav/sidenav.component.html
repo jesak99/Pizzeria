@@ -35,7 +35,7 @@
     <label for="ajustes"><mat-icon>settings</mat-icon>Ajustes</label>
     <!-- Cerrar sesión -->
     <mat-divider></mat-divider>
-    <button type="button" mat-button class="btnSideNav">
+    <button type="button" mat-button class="btnSideNav" (click)="cerrarSesion()">
       <mat-icon>exit_to_app</mat-icon>Cerrar sesión
     </button>
     <mat-divider></mat-divider>
@@ -45,9 +45,18 @@
     <button type="button" mat-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <button type="button" mat-button color="primary">
-      <mat-icon>person</mat-icon>
+    <button class="btn btn-link nav-link d-sm-inline align-items-sm-center" matTooltip="{{nombre}}" mat-button [matMenuTriggerFor]="menu" #menuTrigger>
+      <img
+        src="https://mdbootstrap.com/img/new/avatars/1.jpg"
+        class="rounded-circle"
+        height="45"
+        alt=""
+        loading="lazy"
+      />
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="cerrarSesion()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+    </mat-menu>
   </div>
   <!-- Router para redirigir a cada lugar -->
   <div class="container-fluid">

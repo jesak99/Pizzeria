@@ -1,0 +1,86 @@
+<h3 class="amarillo" mat-dialog-title><span>Tu orden</span><span><mat-icon matTooltip="Descargar" class="imprimir">save_alt</mat-icon><mat-icon matTooltip="Cerrar" mat-dialog-close>close</mat-icon></span></h3>
+<mat-dialog-content>
+    <div class="row encabezado">
+        <p class="titulo">Pizzería Mágica</p>
+        <!--<img src="./assets/pizza.png" alt="">-->
+        <p class="rfc">R.F.C. TCH850701</p>
+        <p>Calle jardín madero 201/A<br>Col. Centro C.P. 68000<br>Oaxaca de Juárez, Oaxaca</p>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row">
+        <p>Entrega en:</p>
+        <p class="direccionUser"><mat-icon class="icono">place</mat-icon>
+            {{orden?.direccion?.calle}} 
+            #{{orden?.direccion?.numExt}}
+            <span *ngIf="orden.direccion.numInt!=''">Int. {{orden?.direccion?.numInt}}</span>
+            {{orden?.direccion?.referencias}}, 
+            {{orden?.direccion?.colonia?.colonia}} {{orden?.direccion?.colonia?.cp}}, 
+            Oaxaca de Juárez, Oaxaca.
+        </p>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row">
+        <div class="col cantt">CANT</div><div class="col art">ARTÍCULO</div><div class="col preciot">PRECIO</div><div class="col totalt">TOTAL</div>
+    </div>
+    <div class="row">
+        <p class="categoria" *ngIf="listOfPizzas.length>0">Pizzas</p>
+    </div>
+    <div class="row" *ngFor="let pizza of listOfPizzas">
+        <div class="col cant">{{pizza.cantidad}}</div><div class="col art">{{pizza.nombre}}</div><div class="col precio">{{pizza.costo.toFixed(2)}}</div><div class="col total">{{pizza.total.toFixed(2)}}</div>
+    </div>
+    <div class="row">
+        <p class="categoria" *ngIf="listOfBebidas.length>0">Bebidas</p>
+    </div>
+    <div class="row" *ngFor="let bebida of listOfBebidas">
+        <div class="col cant">{{bebida.cantidad}}</div><div class="col art">{{bebida.nombre}}</div><div class="col precio">{{bebida.costo.toFixed(2)}}</div><div class="col total">{{bebida.total.toFixed(2)}}</div>
+    </div>
+    <div class="row">
+        <p class="categoria" *ngIf="listOfEntradas.length>0">Entradas</p>
+    </div>
+    <div class="row" *ngFor="let entrada of listOfEntradas">
+        <div class="col cant">{{entrada.cantidad}}</div><div class="col art">{{entrada.nombre}}</div><div class="col precio">{{entrada.costo.toFixed(2)}}</div><div class="col total">{{entrada.total.toFixed(2)}}</div>
+    </div>
+    <div class="row">
+        <p class="categoria" *ngIf="listOfPostres.length>0">Postres</p>
+    </div>
+    <div class="row" *ngFor="let postre of listOfPostres">
+        <div class="col cant">{{postre.cantidad}}</div><div class="col art">{{postre.nombre}}</div><div class="col precio">{{postre.costo.toFixed(2)}}</div><div class="col total">{{postre.total.toFixed(2)}}</div>
+    </div>
+    <div class="row">
+        <p class="categoria" *ngIf="listOfOtros.length>0">Otros</p>
+    </div>
+    <div class="row" *ngFor="let otro of listOfOtros">
+        <div class="col cant">{{otro.cantidad}}</div><div class="col art">{{otro.nombre}}</div><div class="col precio">{{otro.costo.toFixed(2)}}</div><div class="col total">{{otro.total.toFixed(2)}}</div>
+    </div>
+    <div class="row">
+        <div class="col etiqueta">SUBTOTAL  $</div>
+        <div class="col monto">{{orden?.subtotal}}</div>
+    </div>
+    <div class="row">
+        <div class="col etiqueta">DESCUENTO $</div>
+        <div class="col monto">{{orden?.descuento}}</div>
+    </div>
+    <div class="row">
+        <div class="col etiqueta">TOTAL M.N.$</div>
+        <div class="col monto">{{orden?.total}}</div>
+    </div>
+    <div class="row">
+        <div class="col etiqueta">EFECTIVO  $</div>
+        <div class="col monto">{{orden?.efectivo}}</div>
+    </div>
+    <div class="row">
+        <div class="col etiqueta">CAMBIO  $</div>
+        <div class="col monto">{{orden?.cambio}}</div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row pie">
+        <p>ESTADO DE ORDEN: <span class="info">EN PROCESO</span></p>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row pie">
+        <p>06/06/2022 14:36<br>**FOLIO: {{orden?.codigo}}**<br><br>
+            Comentarios o sugerencias <span class="info">951 501 0718</span><br>
+            REGIMEN GENERAL DE PERSONAS MORALES
+        </p>
+    </div>
+</mat-dialog-content>

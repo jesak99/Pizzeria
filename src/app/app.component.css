@@ -5,6 +5,21 @@
     overflow-y: scroll;
 }
 
+button{
+    width: 100%;
+}
+
+p{
+    margin: 0;
+    color: rgb(50, 20, 2);
+    font-size: medium;
+    font-weight: bold;
+}
+
+:host ::ng-deep .mat-progress-bar-fill::after {
+    background-color: rgb(255, 147, 51);
+}
+
 @media screen and (max-width: 546px) {
     .contenido{
         padding-bottom: 70px;

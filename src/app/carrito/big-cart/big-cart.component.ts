@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -16,6 +16,7 @@ export class BigCartComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<Producto> = new MatTableDataSource();
   listAux?:Producto[]=[];
   total: number = 0;
+  @Input() oculto:boolean=true;
 
   constructor(private productoService: ProductoService, private router: Router, public envio: MatDialog) { }
 

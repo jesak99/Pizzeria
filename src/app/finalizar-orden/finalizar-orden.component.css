@@ -1,0 +1,45 @@
+:host ::ng-deep .mat-step-header .mat-step-icon-selected{
+    background-color: rgb(255, 147, 51); 
+}
+
+.row{
+    max-width: 500px;
+}
+
+.col{
+    margin: 0;
+}
+
+.recibe{
+    max-width: 320px;
+    width: 100%;
+}
+
+.telefono{
+    max-width: 180px;
+    width: 100%;
+}
+/**
+:host ::ng-deep .mat-form-field-label{
+    color: rgb(255, 147, 51) !important;
+}**/
+
+:host ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 147, 51) !important;
+}
+  
+:host ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(255, 147, 51) !important;
+} 
+  
+:host ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: rgb(255, 147, 51) !important;;
+}
+
+p{
+    font-size: medium;
+    color: rgb(50, 20, 2);
+}

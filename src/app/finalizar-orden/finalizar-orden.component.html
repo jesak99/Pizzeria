@@ -1,0 +1,124 @@
+<mat-stepper orientation="vertical" linear #stepper>
+    <mat-step [stepControl]="formDireccion">
+      <ng-template matStepLabel>Indícanos tu dirección</ng-template>
+      <ng-template matStepContent>
+        <form [formGroup]="formDireccion" (ngSubmit)="submitDireccion()">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="recibe" appearance="fill">
+                        <mat-label>¿Quién recibe el pedido?</mat-label>
+                        <input matInput type="text" formControlName="recibe">
+                        <mat-error *ngIf="formDireccion.get('recibe')?.hasError('required')">
+                            Este campo es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="telefono" appearance="fill">
+                        <mat-label>Teléfono</mat-label>
+                        <span matPrefix>+52 &nbsp;</span>
+                        <input matInput type="tel" #telefono maxlength="10" placeholder="5555551234" formControlName="telefonoUsr">
+                        <mat-hint align="end">{{telefono.value.length}} / 10</mat-hint>
+                        <mat-error *ngIf="formDireccion.get('telefonoUsr')?.hasError('required')">
+                            Este campo es <strong>requerido</strong>
+                        </mat-error>
+                        <mat-error *ngIf="formDireccion.get('telefonoUsr')?.hasError('pattern')">
+                            Revise el <strong>número</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Colonia</mat-label>
+                        <mat-select formControlName="colonia">
+                            <mat-option *ngFor="let colonia of listOfColonias" [value]="colonia.cp" (click)="mostrar()">{{colonia.colonia}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formDireccion.get('colonia')?.hasError('required')">
+                            Seleccione una <strong>colonia</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col" *ngIf="selectColonia">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Código postal</mat-label>
+                        <input matInput type="text" #postalCode maxlength="5" placeholder="Ex. 94105" formControlName="cp">
+                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                        <mat-error *ngIf="formDireccion.get('cp')?.hasError('required')">
+                            Este campo es <strong>requerido</strong>
+                        </mat-error>
+                        <mat-error *ngIf="formDireccion.get('cp')?.hasError('pattern')">
+                            Sólo <strong>números</strong>
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row" *ngIf="selectColonia">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Calle</mat-label>
+                    <input matInput type="text" formControlName="calle">
+                    <mat-error *ngIf="formDireccion.get('calle')?.hasError('required')">
+                        Este campo es <strong>requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row" *ngIf="selectColonia">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Referencias</mat-label>
+                    <input matInput type="text" formControlName="referencias">
+                    <mat-error *ngIf="formDireccion.get('referencias')?.hasError('required')">
+                        Este campo es <strong>requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row" *ngIf="selectColonia">
+                <div class="col">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Número exterior</mat-label>
+                        <input matInput type="text" formControlName="numExt">
+                        <mat-error *ngIf="formDireccion.get('numExt')?.hasError('required')">
+                            Este campo es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Número interior</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <button mat-button matStepperNext>Siguiente<mat-icon>navigate_next</mat-icon></button>
+        </form>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Verifica tus productos</ng-template>
+      <ng-template matStepContent>
+        <app-big-cart [oculto]="false"></app-big-cart>
+        <button mat-button matStepperPrevious><mat-icon>navigate_before</mat-icon> Atrás</button>
+        <button type="submit" mat-button matStepperNext>Siguiente <mat-icon>navigate_next</mat-icon></button>
+      </ng-template>
+    </mat-step>
+    <mat-step [stepControl]="formEfectivo">
+        <ng-template matStepLabel>Finaliza tu orden</ng-template>
+        <p>Por favor indíquenos el efectivo para calcular su cambio</p>
+        <form [formGroup]="formEfectivo" (ngSubmit)="onSubmit()">
+            <div class="col">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Efectivo</mat-label>
+                    <input matInput type="number" min="0" max="1000" formControlName="efectivo">
+                    <mat-error *ngIf="formEfectivo.get('efectivo')?.hasError('required')">
+                        Este campo es <strong>requerido</strong>
+                    </mat-error>
+                    <mat-error *ngIf="efectivoIngresado<efectivoTotal">
+                        La cantidad debe ser <strong>mayor o igual al total</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button mat-button matStepperPrevious><mat-icon>navigate_before</mat-icon> Atrás</button>
+            <button mat-button type="submit" [disabled]="formEfectivo.invalid"><mat-icon>shop</mat-icon> Finalizar orden</button>
+        </form>
+    </mat-step>
+</mat-stepper>

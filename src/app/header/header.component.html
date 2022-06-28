@@ -5,6 +5,20 @@
     <div class="col ocultar"><img src="./assets/g4073.png" alt="" routerLink="paquetes-promociones"></div>
     <div class="col ocultar"><img src="./assets/path3999.png" alt="" routerLink="nuestros-adicionales"></div>
     <div class="col ocultar"><img src="./assets/g4015.png" alt="" routerLink="carrito"></div>
-    <div class="col"><img src="./assets/g4032.png" alt="" routerLink="auth"></div>
+    <div class="col" *ngIf="session===false"><img src="./assets/g4032.png" alt="" routerLink="auth"></div>
+    <div class="col" *ngIf="session===true">
+      <button class="btn btn-link nav-link d-sm-inline align-items-sm-center" matTooltip="{{nombre}}" mat-button [matMenuTriggerFor]="menu" #menuTrigger>
+        <img
+          src="https://mdbootstrap.com/img/new/avatars/1.jpg"
+          class="rounded-circle"
+          height="45"
+          alt=""
+          loading="lazy"
+        />
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="cerrarSesion()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+      </mat-menu>
+    </div>
   </div>
 </nav>

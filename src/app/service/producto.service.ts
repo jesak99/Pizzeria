@@ -4,6 +4,7 @@ import { Producto } from '../model/producto.model';
 @Injectable({ providedIn: 'root' })
 export class ProductoService{
     listChangedEvent: EventEmitter<Producto[]> = new EventEmitter();
+    estadoOrden: EventEmitter<boolean> = new EventEmitter();
     //codigo, nombre, descripcion, especificacion, costo, imagen, categoria
     listOfProductos: Producto[] = [
         new Producto("P1","Hawaiana","La pizza que unos cuestionan pero todos aman.","Jamón y Piña",120,"./assets/HNC.png","Pizzas", 1, 0),
@@ -32,6 +33,8 @@ export class ProductoService{
     listOfPostres: Producto[]=[];
     listOfOtros: Producto[]=[];
     listOfCarrito: Producto[]=[];
+
+    orden: boolean = false;
 
     //Devuelve toda la lista de productos existentes
     getProductos(){
@@ -176,5 +179,15 @@ export class ProductoService{
             total+= this.listOfCarrito[i].total;
         }
         return total;
+    }
+
+    /**Controlador de orden */
+    changeOrden(estado: boolean){
+        this.orden = estado;
+        this.estadoOrden.emit(estado);
+    }
+
+    getOrden(){
+        return this.orden;
     }
 }
