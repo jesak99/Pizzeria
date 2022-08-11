@@ -13,9 +13,9 @@
                 <div class="row encabezado">Cantidad:</div>
                 <div class="cantidad">
                     <div class="number-input">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" (click)="actualizarProducto(producto.codigo)"></button>
                         <input type="number" class="quantity" min="1" max="20" name="quantity" value="{{producto.cantidad}}" id="quantity" name="quantity" disabled>
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" (click)="actualizarProducto(producto.codigo)"></button>
                     </div>
                 </div>
                 <div class="row encabezado">Precio:</div>
@@ -26,7 +26,7 @@
               </ng-template>
         </mat-expansion-panel>
     </mat-accordion>
-    <div class="row botones"><button mat-flat-button class="btn-danger"><mat-icon class="icono">remove_shopping_cart</mat-icon>VACIAR CARRITO</button></div>
-    <div class="row botones"><button mat-flat-button class="btn-primary"><mat-icon class="icono">shopping_cart</mat-icon>SEGUIR COMPRANDO</button></div>
-    <div class="row botones"><button mat-flat-button class="btn-success"><mat-icon class="icono">shop</mat-icon>FINALIZAR PEDIDO</button></div>
+    <div class="row botones"><button mat-flat-button class="btn-danger" (click)="vaciarCarrito()"><mat-icon class="icono">remove_shopping_cart</mat-icon>VACIAR CARRITO</button></div>
+    <div class="row botones"><button mat-flat-button class="btn-primary" routerLink="/nuestras-pizzas"><mat-icon class="icono">shopping_cart</mat-icon>SEGUIR COMPRANDO</button></div>
+    <div class="row botones"><button mat-flat-button class="btn-success" (click)="openEnvio()"><mat-icon class="icono">shop</mat-icon>FINALIZAR PEDIDO</button></div>
 </div>
